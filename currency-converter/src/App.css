@@ -1,5 +1,5 @@
 body {
-  background-color: #f9e6f3;
+  background-color: #F4A5DC;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -79,12 +79,12 @@ div {
   margin-top: 20px;
   /* background-color: #f9f9f9; */
   padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #eee;
+  /* border-radius: 8px; */
+  /* border: 1px solid #eee; */
 }
 
 h2 {
-  color: #6a4f7d;
+  color: #d01c8b;
   font-size: 18px;
   margin-bottom: 10px;
 }
