@@ -11,7 +11,29 @@ const App = () => {
 
   const currencies = ['USD', 'EUR', 'RON', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'SEK', 'PLN'];
 
-  const handleConvert = async () => {
+  const createSparkle = (x, y) => {
+    const sparkle = document.createElement('div');
+    sparkle.classList.add('sparkle');
+    sparkle.style.left = `${x}px`;
+    sparkle.style.top = `${y}px`;
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => sparkle.remove(), 800);
+  };
+
+  const triggerSparkles = (event) => {
+    for (let i = 0; i < 20; i++) {
+      setTimeout(() => {
+        const offsetX = (Math.random() - 0.5) * 150;
+        const offsetY = (Math.random() - 0.5) * 150;
+        createSparkle(event.clientX + offsetX, event.clientY + offsetY);
+      }, i * 40);
+    }
+  };
+
+  const handleConvert = async (event) => {
+    triggerSparkles(event);
+
     try {
       const response = await axios.post('http://localhost:5000/convert', {
         amount: parseFloat(amount),
